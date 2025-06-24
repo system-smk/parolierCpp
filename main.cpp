@@ -36,7 +36,7 @@ std::string auHasard(const std::vector<std::string>& liste) {
 }
 
 int main() {
-    	std::srand(std::time(nullptr)); // Initialiser l'aléatoire
+    	std::srand(std::time(nullptr)); // Initialiser l'aléatoire avec time
 	std::set<std::string> phrasesRejetees;
 	std::ifstream fichierRejets("phrases_rejetees.txt");
 	std::string ligne;
@@ -46,7 +46,7 @@ int main() {
 	    	}
 	}
 
-    // 📚 Charger les catégories
+    //  Charger les catégories
     	std::vector<std::string> sujets = lireFichier("sujets.txt");
     	std::vector<std::string> verbes = lireFichier("verbes.txt");
     	std::vector<std::string> complements = lireFichier("complements.txt");
@@ -54,7 +54,7 @@ int main() {
 
 	std::string reponse = "n";
 	while (true){
-    // 🧠 Assembler la phrase
+    // Assembler la phrase
 		std::string phrase;
 		do{
     			phrase = auHasard(sujets) + " " +
